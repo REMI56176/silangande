@@ -963,93 +963,10 @@
                 answer.style.display = 'block';
                 element.classList.add('active');
             }
-        }
-
-        // Fungsionalitas Simulasi Form Permohonan
-        function handleFormSubmission(event) {
-            event.preventDefault(); // Mencegah form dikirim ke server (simulasi)
-
-            const form = document.getElementById('requestForm');
-            const successMessage = document.getElementById('successMessage');
-            
-            if (form.checkValidity()) {
-                // Sembunyikan form dan tampilkan pesan sukses
-                form.style.display = 'none';
-                successMessage.style.display = 'block';
-                
-                // Pindah ke bagian atas form untuk melihat notifikasi
-                document.getElementById('form-permohonan').scrollIntoView({ behavior: 'smooth', block: 'start' });
-                
-                // Untuk proyek nyata, Anda akan mengirim data ke backend di sini
-                // console.log('Data form siap dikirim...'); 
-                
-            } else {
-                alert("Mohon lengkapi semua bidang yang wajib diisi (bertanda *).");
-            }
-        }
-		const GOOGLE_SCRIPT_URL = https://docs.google.com/spreadsheets/d/1dS5zBx_dHYrUXUbTeEFTYgZ_BRdUNKKj8Z-ghvIKZ7w/edit?usp=sharing; 
-
-		function handleFormSubmission(event) {
-			event.preventDefault(); // Mencegah form melakukan reload halaman
-
-			const form = document.getElementById('requestForm');
-			const successMessage = document.getElementById('successMessage');
-			const submitButton = form.querySelector('button[type="submit"]');
-
-			if (!form.checkValidity()) {
-				alert("Mohon lengkapi semua bidang yang wajib diisi (bertanda *).");
-				return;
-			}
-
-			submitButton.disabled = true;
-			submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Mengirim...';
-			
-			const data = new FormData(form);
-			
-			// Konversi FormData menjadi objek URLSearchParams
-			const params = new URLSearchParams();
-			for (const [name, value] of data) {
-				params.append(name, value);
-			}
-			
-			// Kirim data secara asinkron (AJAX) ke Apps Script
-			fetch(GOOGLE_SCRIPT_URL, {
-				method: 'POST',
-				// mode: 'no-cors' diperlukan untuk skrip eksternal seperti Apps Script
-				mode: 'no-cors', 
-				body: params
-			})
-			.then(() => {
-				// --- PROSES SUKSES ---
-				form.reset(); 
-				
-				// Sembunyikan form dan tampilkan pesan sukses
-				form.style.display = 'none';
-				successMessage.style.display = 'block';
-				
-				// Pindah ke bagian atas form agar user melihat notifikasi
-				document.getElementById('form-permohonan').scrollIntoView({ behavior: 'smooth', block: 'start' });
-
-				// Timer untuk mengembalikan tampilan
-				setTimeout(() => {
-					successMessage.style.display = 'none';
-					form.style.display = 'block';
-					submitButton.disabled = false;
-					submitButton.innerHTML = '<i class="fas fa-paper-plane"></i> Kirim Permintaan';
-				}, 8000); 
-
-			})
-			.catch((error) => {
-				// --- PROSES GAGAL ---
-				console.error('Error saat mengirim formulir:', error);
-				alert('Terjadi kesalahan saat mengirim data. Silakan coba lagi atau hubungi via WhatsApp.');
-				
-				submitButton.disabled = false;
-				submitButton.innerHTML = '<i class="fas fa-paper-plane"></i> Kirim Permintaan';
-			});
 		}
     </script>
 </body>
 </html>
+
 
 
