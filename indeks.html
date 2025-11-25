@@ -1,0 +1,1053 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lembaga Mitra Edukasi - Mendukung Pendidikan Bermutu</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <style>
+        :root {
+            --color-primary: #1F3A68; /* Biru Navy */
+            --color-secondary: #007BFF; /* Biru Muda */
+            --color-accent: #FF8800; /* Oranye */
+            --color-text: #333;
+            --color-light: #f4f7f6;
+            --font-judul: 'Poppins', sans-serif;
+            --font-isi: 'Inter', sans-serif;
+        }
+
+        /* --- Global Reset & Typography --- */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-isi);
+            line-height: 1.6;
+            color: var(--color-text);
+            background-color: white;
+            scroll-behavior: smooth;
+        }
+		
+		html {
+		scroll-padding-top: 90px;
+
+        h1, h2, h3, h4 {
+            font-family: var(--font-judul);
+            color: var(--color-primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        h1 { font-size: 2.5rem; }
+        h2 { font-size: 2rem; }
+        h3 { font-size: 1.5rem; }
+
+        a {
+            text-decoration: none;
+            color: var(--color-secondary);
+            transition: color 0.3s;
+        }
+        
+        a:hover {
+            color: var(--color-accent);
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        section {
+            padding: 4rem 0;
+        }
+
+        /* --- Header & Navigasi --- */
+        .header {
+            background-color: white;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+		.logo {
+		display: flex; /* Menggunakan Flexbox untuk mensejajarkan gambar dan teks */
+		align-items: center; /* Menyelaraskan item secara vertikal di tengah */
+		text-decoration: none; /* Menghilangkan underline pada link */
+		color: black; /
+		margin-bottom: 10px;
+		}
+		
+		.logo-img {
+		width: 65px; /* Ukuran gambar logo yang sedikit lebih besar */
+		height: auto;
+		margin-right: 2px; /* Jarak antara gambar dan teks */
+		}
+		
+		.logo-title {
+		display: block; /* Agar menempati baris penuh di dalam div */
+		font-weight: 900; /* Lebih tebal */
+		font-size: 1.8rem; /* Lebih besar */
+		line-height: 0.9; /* Mengatur jarak vertikal teks utama */
+		/* Jika Anda ingin warna berbeda untuk SILANGANDE, tambahkan di sini */
+		/* color: #333; */
+		}
+
+		.logo-description {
+		display: block; /* Agar menempati baris baru di bawah logo-title */
+		font-size: 0.85rem; /* Teks deskripsi lebih besar */
+		font-weight: 400;
+		opacity: 0.8;
+		margin-top: 2px; /* Memberi sedikit jarak dari logo-title */
+		line-height: 1.2; /* Menjaga jarak baris untuk deskripsi */
+		}
+		
+        .nav-menu {
+            display: flex;
+            gap: 1.5rem;
+            list-style: none;
+        }
+
+        .nav-menu a {
+            color: var(--color-text);
+            font-weight: 600;
+            padding: 0.5rem 0;
+        }
+
+        .nav-menu a:hover {
+            color: var(--color-secondary);
+        }
+        
+        /* Dropdown Styling */
+        .nav-item.dropdown {
+            position: relative;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.15);
+            z-index: 1;
+            min-width: 250px;
+            top: 100%;
+            left: 0;
+            border-top: 3px solid var(--color-accent);
+            padding: 0.5rem 0;
+        }
+
+        .dropdown-content a {
+            color: var(--color-text);
+            padding: 10px 15px;
+            display: block;
+            white-space: nowrap;
+            font-weight: 400;
+            transition: background-color 0.3s;
+        }
+
+        .dropdown-content a:hover {
+            background-color: var(--color-light);
+            color: var(--color-primary);
+        }
+
+        .nav-item.dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* Tombol Hamburger (Mobile) */
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        .bar {
+            display: block;
+            width: 25px;
+            height: 3px;
+            margin: 5px auto;
+            transition: all 0.3s ease-in-out;
+            background-color: var(--color-primary);
+        }
+
+        /* --- Tombol CTA (Call to Action) --- */
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: background-color 0.3s, transform 0.2s;
+            text-align: center;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background-color: var(--color-primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #1a3055;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background-color: var(--color-accent);
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background-color: #e67a00;
+            transform: translateY(-2px);
+        }
+        
+        /* --- Bagian Hero Banner (Beranda) --- */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('gend.jpg'); 
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 6rem 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            color: white;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 3rem;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0.9;
+        }
+
+        .hero-cta {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        /* --- Struktur Grid Umum (Layanan, Keunggulan, berita) --- */
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        /* --- Bagian Keunggulan (Home) --- */
+        .section-keunggulan {
+            background-color: var(--color-light);
+            text-align: center;
+        }
+
+        .keunggulan-item {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s;
+        }
+        
+        .keunggulan-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .keunggulan-item i {
+            font-size: 3rem;
+            color: var(--color-secondary);
+            margin-bottom: 1rem;
+        }
+
+        /* --- Bagian Layanan Detail --- */
+        .layanan-detail-card {
+            border-left: 5px solid var(--color-accent);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            background-color: white;
+            border-radius: 4px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+        
+        .layanan-detail-card:nth-child(even) {
+             border-left-color: var(--color-secondary);
+             background-color: var(--color-light);
+        }
+
+        .layanan-detail-card i {
+            font-size: 1.25rem;
+            margin-right: 0.5rem;
+        }
+        
+        .layanan-detail-card ul {
+            list-style: none;
+            padding-left: 0;
+            margin-top: 10px;
+        }
+        
+        .layanan-detail-card ul li:before {
+            content: "✓";
+            color: var(--color-accent);
+            font-weight: bold;
+            display: inline-block; 
+            width: 1em;
+            margin-left: -1em;
+        }
+
+        /* --- Formulir Permintaan --- */
+        #form-permohonan {
+            background-color: var(--color-light);
+        }
+
+        #requestForm {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 3rem;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        #requestForm label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--color-primary);
+        }
+
+        #requestForm input[type="text"], 
+        #requestForm input[type="tel"], 
+        #requestForm input[type="date"],
+        #requestForm select,
+        #requestForm textarea {
+            width: 100%;
+            padding: 0.75rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            display: block;
+            font-family: var(--font-isi);
+            font-size: 1rem;
+        }
+        
+        #requestForm textarea {
+            resize: vertical;
+        }
+
+        /* --- Galeri --- */
+        .galeri-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .galeri-item {
+            aspect-ratio: 4/3;
+            background-color: #eee;
+            border-radius: 8px;
+            overflow: hidden;
+            background-size: cover;
+            background-position: center;
+            transition: transform 0.3s;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .galeri-item:hover {
+            transform: scale(1.03);
+        }
+
+        /* --- berita/Blog Card --- */
+        .berita-card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            padding: 1.5rem;
+            text-align: left;
+            transition: box-shadow 0.3s;
+        }
+        
+        .berita-card:hover {
+             box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .berita-card h3 {
+            font-size: 1.25rem;
+            margin: 0.5rem 0;
+        }
+        
+        .berita-card a {
+            font-weight: 600;
+            color: var(--color-accent);
+        }
+
+        /* --- FAQ Accordion --- */
+        .faq-item {
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            background-color: var(--color-light);
+            padding: 1rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: var(--color-primary);
+        }
+
+        .faq-answer {
+            padding: 1rem;
+            background-color: white;
+            display: none;
+        }
+        
+        .faq-question i {
+            transition: transform 0.3s;
+        }
+        
+        .faq-question.active i {
+            transform: rotate(45deg);
+            color: var(--color-accent);
+        }
+
+        /* --- Footer --- */
+        .footer {
+            background-color: var(--color-primary);
+            color: white;
+            padding: 3rem 0;
+            border-top: 5px solid var(--color-accent);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer h4 {
+            color: var(--color-accent);
+            margin-bottom: 1rem;
+        }
+
+        .footer ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .footer ul a {
+            color: white;
+            opacity: 0.8;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer ul a:hover {
+            opacity: 1;
+            color: var(--color-secondary);
+        }
+
+        .social-icons a {
+            font-size: 1.5rem;
+            margin-right: 1rem;
+            color: white;
+            opacity: 0.8;
+        }
+
+        .footer-bottom {
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        /* --- Tombol WA Terapung --- */
+        .fixed-chat-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25D366; 
+            color: white;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.8rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .fixed-chat-button:hover {
+            background-color: #128C7E;
+            transform: scale(1.1);
+        }
+
+        /* --- Responsif (Mobile) --- */
+        @media (max-width: 992px) {
+            .nav-menu {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 75px; /* Sesuaikan tinggi header */
+                left: 0;
+                width: 100%;
+                background-color: white;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                padding: 0;
+                transition: all 0.3s ease-in-out;
+            }
+
+            .nav-menu.active {
+                display: flex;
+            }
+            
+            .nav-menu a {
+                padding: 0.75rem 1rem;
+                border-bottom: 1px solid var(--color-light);
+            }
+            
+            /* Atur Dropdown di Mobile */
+            .nav-item.dropdown:hover .dropdown-content,
+            .nav-item.dropdown .dropdown-content.active {
+                display: flex;
+                flex-direction: column;
+                position: static;
+                box-shadow: none;
+                border-top: none;
+                padding-left: 1rem;
+                background-color: var(--color-light);
+                min-width: unset;
+            }
+            
+            .nav-item.dropdown > a:focus + .dropdown-content {
+                display: flex;
+                flex-direction: column;
+            }
+            
+            .hamburger {
+                display: block;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .hero-cta {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 80%; /* Tombol CTA lebih besar di mobile */
+            }
+            
+            .grid-3 {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 2.5rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <a href="https://wa.me/628123456789" target="_blank" class="fixed-chat-button" title="Hubungi kami via WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <header class="header">
+        <div class="container navbar">
+        <a href="#beranda" class="logo">
+            <img src="logo.png" class="logo-img">
+            <div> <span class="logo-title">SILANGANDE</span> <small class="logo-description">Sistem Informasi Layanan Generasi Demokrasi</small> </div>
+        </a>
+        <ul class="nav-menu" id="navMenu">
+            <li class="nav-item"><a href="#beranda">Beranda</a></li>
+            <li class="nav-item"><a href="#tentang-kami">Tentang Kami</a></li>
+            <li class="nav-item"><a href="#layanan">Layanan</a></li>
+            <li class="nav-item"><a href="#form-permohonan">Form Permohonan</a></li>
+            <li class="nav-item"><a href="#galeri">Galeri</a></li>
+            <li class="nav-item"><a href="#berita">Berita</a></li>
+            <li class="nav-item"><a href="#faq">FAQ</a></li>
+            <li class="nav-item"><a href="#kontak">Kontak</a></li>
+        </ul>
+		</div>
+    </header>
+
+    <main>
+        <section class="hero" id="beranda">
+            <div class="container">
+                <h1>Membentuk generasi muda cerdas, berintegritas, dan aktif berpartisipasi dalam demokrasi</h1>
+                <p>KPU Kabupaten Lombok Timur siap memberikan layanan narasumber, peminjaman perlengkapan pemilihan suara untuk pemilihan OSIS, pendampingan OSIS, pembina apel pagi, kajian IMTAQ, serta kerja sama lainnya untuk meningkatkan partisipasi pemilih, menumbuhkan kesadaran berdemokrasi, dan memperkuat integritas pemilih di lingkungan sekolah.</p>
+                <div class="hero-cta">
+                    <a href="#layanan-narasumber" class="btn btn-primary"><i class="fas fa-chalkboard-teacher"></i> Ajukan Narasumber</a>
+                    <a href="#layanan-kerjasama" class="btn btn-primary"><i class="fas fa-handshake"></i> Kerja Sama Pendidikan</a>
+                    <a href="#layanan-peminjaman" class="btn btn-primary"><i class="fas fa-tools"></i> Pinjam Perlengkapan</a>
+                </div>
+            </div>
+        </section>
+        <section class="section-keunggulan">
+            <div class="container">
+                <h2 style="text-align: center; margin-top: 4rem; margin-bottom: 2.5rem;">Layanan Generasi Demokrasi</h2>
+                <div class="grid-3">
+                    <a href="#layanan-narasumber" class="keunggulan-item" style="border-top: 3px solid var(--color-primary);">
+                        <i class="fas fa-podcast" style="color: var(--color-primary);"></i>
+                        <h3>Layanan Narasumber</h3>
+                        <p>Pendidikan demokrasi, literasi kepemiluan, integritas pemilih, kepemimpinan pemuda, dan motivasi partisipasi pemilu</p>
+                    </a>
+                    <a href="#layanan-apel" class="keunggulan-item" style="border-top: 3px solid var(--color-primary);">
+                        <i class="fas fa-bullhorn" style="color: var(--color-primary);"></i>
+                        <h3>Pembina Apel Pagi</h3>
+                        <p>Pembinaan kedisiplinan, semangat kebangsaan, serta motivasi partisipasi dan kesadaran berdemokrasi</p>
+                    </a>
+                    <a href="#layanan-osis" class="keunggulan-item" style="border-top: 3px solid var(--color-primary);">
+                        <i class="fas fa-vote-yea" style="color: var(--color-primary);"></i>
+                        <h3>Pendampingan Pemilihan OSIS</h3>
+                        <p>Fasilitasi pemungutan suara yang demokratis dan berintegritas di lingkungan pendidikan</p>
+                    </a>
+					<a href="#layanan-narasumber" class="keunggulan-item" style="border-top: 3px solid var(--color-primary);">
+                        <i class="fas fa-box-archive" style="color: var(--color-primary);"></i>
+                        <h3>Peminjaman Perlengkapan Pemilihan OSIS</h3>
+                        <p>Menghadirkan pengalaman pemilu yang nyata melalui penyelenggaraan pemilihan OSIS sebagai miniatur pemilu</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <hr class="container" style="border: none; border-top: 1px solid var(--color-light); margin: 0 auto; width: 100%;">
+
+        <section id="tentang-kami">
+            <div class="container">
+                <h2 style="text-align: center; margin-bottom: 3rem;">Tentang Layanan Generasi Demokrasi</h2>
+                
+                <div id="profil" style="margin-bottom: 3rem;">
+                    <h3>Profil KPU Kabupaten Lombok Timur</h3>
+                    <p>Komisi Pemilihan Umum Kabupaten Lombok Timur, beralamat di Jalan Cipto Mangunkusumo Nomor 6, Majidi, Selong, Lombok Timur, bertugas menyelenggarakan seluruh tahapan Pemilu dan Pilkada secara langsung, umum, bebas, rahasia, jujur, dan adil. Untuk merespons perkembangan teknologi, karakter pemilih muda, dan kebutuhan peningkatan literasi kepemiluan di kalangan pelajar, KPU Kabupaten Lombok Timur menggagas program GEN-D (Generasi Demokrasi) sebagai pendidikan pemilih yang inovatif, interaktif, dan ramah Gen Z. Melalui pendekatan digital, pemanfaatan kecerdasan buatan, miniatur pemilu melalui pemilihan OSIS, serta kegiatan partisipatif di sekolah, GEN-D bertujuan menanamkan pemahaman demokrasi, meningkatkan kesadaran penggunaan hak pilih, mencegah apatisme politik, serta membangun kepemimpinan dan partisipasi politik sejak dini.</p>
+                </div>
+                
+                <div id="visi-misi" style="margin-bottom: 3rem;">
+                    <h3>Visi & Misi</h3>
+                    <h4>Visi</h4>
+                    <blockquote style="border-left: 5px solid var(--color-accent); padding-left: 20px; margin: 1rem 0; font-style: italic; background-color: var(--color-light); padding: 10px;">
+                        “Mewujudkan generasi muda yang cerdas, kritis, berintegritas, dan berpartisipasi aktif dalam demokrasi melalui pendidikan kepemiluan yang modern, inklusif, dan berkelanjutan.”
+                    </blockquote>
+                    <h4>Misi</h4>
+                    <ul>
+                        <li>Memberikan pengetahuan dasar tentang demokrasi, asas dan prinsip Pemilu, serta tata cara pemungutan suara.</li>
+                        <li>Meningkatkan kesadaran dan kepedulian generasi muda terhadap pentingnya menggunakan hak pilih.</li>
+                        <li>Mencegah apatisme politik di kalangan pemilih pemula.</li>
+						<li>Menumbuhkan semangat kepemimpinan dan tanggung jawab sosial melalui miniatur praktik demokrasi pada pemilihan OSIS.</li>
+						<li>Menyusun model sosialisasi yang inovatif dan ramah Gen Z, menggunakan pendekatan digital, interaktif, dan berbasis teknologi.</li>					
+                    </ul>
+                </div>
+                
+                <div id="legalitas" style="margin-bottom: 3rem;">
+                    <h3>Struktur Organisasi KPU Kabupaten Lombok Timur</h3>
+                    <ul>
+                        <li><i class="fas fa-file-contract"></i> Akta Yayasan No. [XXX/YYYY]</li>
+                        <li><i class="fas fa-passport"></i> NPWP Lembaga: [XX.XXX.XXX.X-XXX.XXX]</li>
+                        <li><i class="fas fa-certificate"></i> SK Kemenkumham: [SK.XXXX]</li>
+                    </ul>
+                </div>
+
+                <div id="tim">
+                    <h3>Tim & Narasumber Tetap</h3>
+                    <p>Didukung oleh para praktisi dan akademisi. ****</p>
+                    <p>Contoh kualifikasi:</p>
+                    <div class="grid-3" style="margin-top: 1rem;">
+                        <p><i class="fas fa-check-circle" style="color: var(--color-secondary);"></i> **Dr. (Cand) Budi:** Pakar Pendidikan Karakter</p>
+                        <p><i class="fas fa-check-circle" style="color: var(--color-secondary);"></i> **Sdr. Aisyah, M.Pd.:** Ahli Literasi Digital</p>
+                        <p><i class="fas fa-check-circle" style="color: var(--color-secondary);"></i> **Ustaz Ali:** Pembina Kajian Keagamaan</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        
+        <hr class="container" style="border: none; border-top: 1px solid var(--color-light); margin: 0 auto; width: 80%;">
+
+        <section id="layanan">
+            <div class="container">
+                <h2 style="text-align: center; margin-bottom: 3rem;"><i class="fas fa-hands-helping" style="color: var(--color-accent);"></i> Daftar Lengkap Pelayanan Kami</h2>
+                
+                <div id="layanan-narasumber" class="layanan-detail-card">
+                    <h3><i class="fas fa-podcast"></i> Narasumber Seminar / Workshop</h3>
+                    <p>Topik: pendidikan karakter, literasi digital, kepemimpinan siswa, motivasi belajar, demokrasi sekolah, karir, dll.</p>
+                    <p>Estimasi waktu konfirmasi: **1x24 jam**.</p>
+                    <a href="#form-permohonan" class="btn btn-secondary" style="padding: 0.5rem 1rem; margin-top: 0.5rem;">Ajukan Narasumber</a>
+                </div>
+
+                <div id="layanan-peminjaman" class="layanan-detail-card">
+                    <h3><i class="fas fa-tools"></i> Peminjaman Perlengkapan Pendidikan</h3>
+                    <p>Katalog: alat simulasi pemilu/organisasi, peralatan pelatihan kepemimpinan, media pembelajaran.</p>
+                    <p>Syarat: Surat permohonan resmi dan penanggung jawab penggunaan.</p>
+                    <a href="#form-permohonan" class="btn btn-primary" style="padding: 0.5rem 1rem; margin-top: 0.5rem;">Form Peminjaman</a>
+                </div>
+                
+                <div id="layanan-kerjasama" class="layanan-detail-card">
+                    <h3><i class="fas fa-handshake"></i> Kerja Sama Kependidikan (MoU/MoA)</h3>
+                    <p>Program pendampingan sekolah, penguatan OSIS/BEM, mentorship, pembuatan program literasi, kolaborasi acara.</p>
+                </div>
+                
+                <div id="layanan-apel" class="layanan-detail-card">
+                    <h3><i class="fas fa-bell"></i> Pembina Apel Pagi Sekolah</h3>
+                    <p>Pembina rutin atau insidental dengan topik fokus pada kedisiplinan, motivasi, etika, dan semangat kebangsaan.</p>
+                </div>
+                
+                <div id="layanan-imtaq" class="layanan-detail-card">
+                    <h3><i class="fas fa-mosque"></i> Kajian IMTAQ (Keagamaan)</h3>
+                    <p>Layanan untuk sekolah/kampus/pesantren. Pilihan tema: akhlak mulia, etika, motivasi Islami.</p>
+                </div>
+                
+                <div id="layanan-kuliah" class="layanan-detail-card">
+                    <h3><i class="fas fa-university"></i> Kuliah Umum (Kampus)</h3>
+                    <p>Tema: Kepemimpinan mahasiswa, demokrasi & *civic engagement*, budaya akademik, pengembangan karier.</p>
+                </div>
+                
+                <div id="layanan-sosialisasi" class="layanan-detail-card">
+                    <h3><i class="fas fa-bullhorn"></i> Sosialisasi Kependidikan</h3>
+                    <p>Sosialisasi pemilih pemula, anti perundungan (bullying), anti narkotika, literasi digital & etika media sosial.</p>
+                </div>
+                
+                <div id="layanan-osis" class="layanan-detail-card">
+                    <h3><i class="fas fa-vote-yea"></i> Pendampingan Pemilihan OSIS/BEM</h3>
+                    <p>Fasilitasi pemilu, pelatihan panitia, penyediaan alat dan simulasi, dokumentasi.</p>
+                </div>
+                
+                <div id="layanan-lainnya" class="layanan-detail-card">
+                    <h3><i class="fas fa-ellipsis-h"></i> Layanan Lainnya (Custom Request)</h3>
+                    <p>Untuk kebutuhan khusus, Anda dapat mengajukan permintaan custom melalui formulir.</p>
+                </div>
+
+            </div>
+        </section>
+        
+        <hr class="container" style="border: none; border-top: 1px solid var(--color-light); margin: 0 auto; width: 80%;">
+
+        <section id="form-permohonan">
+            <div class="container">
+                <h2 style="text-align: center; margin-bottom: 2rem;"><i class="fas fa-file-alt"></i> Ajukan Permintaan Layanan</h2>
+                <form id="requestForm" onsubmit="handleFormSubmission(event)">
+                    
+                    <label for="layanan">Jenis Layanan yang Dibutuhkan*</label>
+					<select id="layanan" name="layanan" required>
+						<option value="">Pilih Jenis Formulir</option>
+						<option value="narasumber">Permohonan Narasumber</option>
+						<option value="peminjaman">Permohonan Peminjaman Alat</option>
+						<option value="kerjasama">Permohonan Kerja Sama</option>
+						<option value="apel">Permohonan Pembina Apel</option>
+						<option value="imtaq">Permohonan Kajian IMTAQ</option>
+						<option value="kuliah-umum">Permohonan Kuliah Umum</option>
+						<option value="osis-bem">Permohonan Pendampingan OSIS/BEM</option>
+						<option value="lainnya">Layanan Lainnya (Custom Request)</option>
+					</select>
+					
+					<label for="instansi">Nama Sekolah/Kampus/Instansi*</label>
+					<input type="text" id="instansi" name="instansi" required placeholder="Contoh: SMA Negeri 1 Jakarta">
+
+					<label for="pj">Penanggung Jawab (Nama Lengkap)*</label>
+					<input type="text" id="pj" name="pj" required placeholder="Contoh: Bapak/Ibu Ahmad">
+
+					<label for="kontak">Nomor HP/WhatsApp Penanggung Jawab*</label>
+					<input type="tel" id="kontak" name="kontak" required placeholder="Contoh: 0812XXXXXXXX">
+
+					<label for="jadwal">Estimasi Tanggal Pelaksanaan*</label>
+					<input type="date" id="jadwal" name="jadwal" required>
+					
+					<label for="kebutuhan">Jelaskan Kebutuhan Anda (Topik, Jumlah Peserta, dll.)*</label>
+					<textarea id="kebutuhan" name="kebutuhan" rows="5" required placeholder="Jelaskan detail kebutuhan dan catatan khusus Anda."></textarea>
+					
+					<button type="submit" class="btn btn-secondary" style="width: 100%; margin-top: 1rem; padding: 1rem; font-size: 1.1rem;"><i class="fas fa-paper-plane"></i> Kirim Permintaan</button>
+					<p style="text-align: center; margin-top: 1rem; font-size: 0.85rem; color: #666;">*Tim kami akan menghubungi Anda dalam 1x24 jam (hari kerja).</p>
+					
+					<div id="successMessage" style="display: none; margin-top: 1.5rem; padding: 1rem; background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; border-radius: 4px; text-align: center;">
+						<i class="fas fa-check-circle"></i> Permintaan Anda sudah kami terima. Tim kami akan menghubungi dalam 1x24 jam.
+					</div>
+                </form>
+            </div>
+        </section>
+        
+        <hr class="container" style="border: none; border-top: 1px solid var(--color-light); margin: 0 auto; width: 80%;">
+
+        <section id="galeri">
+            <div class="container">
+                <h2 style="text-align: center; margin-bottom: 2rem;"><i class="fas fa-images"></i> Galeri Dokumentasi Kegiatan</h2>
+                <div class="galeri-grid"> 
+                    <div class="galeri-item" style="background-image: url('https://picsum.photos/300/225?seminar');"></div>
+                    <div class="galeri-item" style="background-image: url('https://picsum.photos/300/225?apel');"></div>
+                    <div class="galeri-item" style="background-image: url('https://picsum.photos/300/225?osis');"></div>
+                    <div class="galeri-item" style="background-image: url('https://picsum.photos/300/225?kuliah');"></div>
+                    <div class="galeri-item" style="background-image: url('https://picsum.photos/300/225?sosialisasi');"></div>
+                    <div class="galeri-item" style="background-image: url('https://picsum.photos/300/225?imtaq');"></div>
+                </div>
+                <div style="text-align: center; margin-top: 2rem;"><a href="#" class="btn btn-primary" style="background-color: var(--color-secondary);">Lihat Semua Foto</a></div>
+            </div>
+        </section>
+        
+        <hr class="container" style="border: none; border-top: 1px solid var(--color-light); margin: 0 auto; width: 80%;">
+
+        <section id="berita" style="background-color: var(--color-light);">
+            <div class="container">
+                <h2 style="text-align: center; margin-bottom: 2rem;"><i class="fas fa-pen-nib"></i> berita & Wawasan Edukasi</h2>
+                <div class="grid-3"> 
+                    <div class="berita-card">
+                        <span style="font-size: 0.8rem; color: #999;">Pendidikan Karakter | 15 Nov 2025</span>
+                        <h3>Pentingnya Literasi Digital di Era Disrupsi</h3>
+                        <p style="font-size: 0.9rem;">Panduan bagi guru dan siswa untuk menghadapi tantangan etika media sosial dan *hoax*.</p>
+                        <a href="#">Baca Selengkapnya <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    <div class="berita-card">
+                        <span style="font-size: 0.8rem; color: #999;">Organisasi Siswa | 10 Nov 2025</span>
+                        <h3>Tips Sukses Pemilu OSIS yang Demokratis dan Berintegritas</h3>
+                        <p style="font-size: 0.9rem;">Langkah-langkah praktis untuk panitia dalam menyelenggarakan pemilu yang adil.</p>
+                        <a href="#">Baca Selengkapnya <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    <div class="berita-card">
+                        <span style="font-size: 0.8rem; color: #999;">Pengembangan Diri | 01 Nov 2025</span>
+                        <h3>4 Mindset Belajar yang Harus Dimiliki Mahasiswa Abad Ini</h3>
+                        <p style="font-size: 0.9rem;">Mengembangkan pola pikir pertumbuhan untuk mencapai potensi akademik maksimal.</p>
+                        <a href="#">Baca Selengkapnya <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div style="text-align: center; margin-top: 2rem;"><a href="#" class="btn btn-primary">Kunjungi Semua berita</a></div>
+            </div>
+        </section>
+        
+        <hr class="container" style="border: none; border-top: 1px solid var(--color-light); margin: 0 auto; width: 80%;">
+
+        <section id="faq">
+            <div class="container" style="max-width: 800px;">
+                <h2 style="text-align: center; margin-bottom: 2rem;"><i class="fas fa-question-circle"></i> Pertanyaan yang Sering Diajukan (FAQ)</h2>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">Apakah layanan berbayar atau gratis/berdonasi? <i class="fas fa-plus"></i></div>
+                    <div class="faq-answer">Layanan kami bersifat **fleksibel** (Gratis/Donasi/Berbayar) tergantung pada jenis program, durasi, dan kebijakan instansi Anda. Silakan konsultasikan kebutuhan spesifik Anda melalui formulir.</div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">Berapa lama proses konfirmasi narasumber? <i class="fas fa-plus"></i></div>
+                    <div class="faq-answer">Kami berupaya merespons dan memberikan konfirmasi jadwal awal dalam waktu maksimal **1x24 jam** (hari kerja) setelah formulir permintaan Anda diterima.</div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">Bagaimana prosedur peminjaman alat simulasi? <i class="fas fa-plus"></i></div>
+                    <div class="faq-answer">Anda cukup mengisi **Form Permohonan Peminjaman Alat** dan menyertakan surat permohonan resmi dari sekolah/kampus. Tim kami akan menginformasikan syarat dan tanggung jawab penggunaan lebih lanjut.</div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">Apakah kami bisa *request* tema/topik khusus di luar yang tercantum? <i class="fas fa-plus"></i></div>
+                    <div class="faq-answer">Ya, tentu saja. Kami terbuka untuk penyesuaian tema. Silakan sebutkan topik spesifik yang Anda butuhkan pada bagian **Kebutuhan Khusus** di formulir.</div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer" id="kontak">
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <h4>Mitra Edukasi</h4>
+                <p style="opacity: 0.9; font-size: 0.9rem;">Lembaga nirlaba yang fokus pada pengembangan SDM melalui program pendidikan berkarakter dan berintegritas.</p>
+                <div class="social-icons" style="margin-top: 1rem;">
+                    <a href="#" title="Facebook"><i class="fab fa-facebook-square"></i></a>
+                    <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" title="Twitter"><i class="fab fa-twitter-square"></i></a>
+                    <a href="https://wa.me/628123456789" title="WhatsApp"><i class="fab fa-whatsapp-square"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-col">
+                <h4>Link Cepat</h4>
+                <ul>
+                    <li><a href="#form-permohonan">Ajukan Permintaan</a></li>
+                    <li><a href="#layanan">Semua Layanan</a></li>
+                    <li><a href="#galeri">Galeri Kegiatan</a></li>
+                    <li><a href="#berita">Blog berita</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Kontak & Lokasi</h4>
+                <p style="opacity: 0.9;"><i class="fas fa-envelope"></i> <a href="mailto:email@lembagaanda.org">email@lembagaanda.org</a></p>
+                <p style="opacity: 0.9;"><i class="fas fa-phone"></i> +62 21 1234 5678</p>
+                <p style="opacity: 0.9;"><i class="fab fa-whatsapp"></i> +62 812-XXXX-XXXX</p>
+                <p style="opacity: 0.9; margin-top: 1rem;"><i class="fas fa-map-marker-alt"></i> Jl. Pendidikan No. 123, Kota Edukasi.</p>
+                <p style="opacity: 0.9; font-size: 0.85rem;">Jam Layanan: Sen-Jum, 08.00 - 16.00 WIB</p>
+            </div>
+            
+            <div class="footer-col">
+                <h4>Peta Lokasi</h4>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.24131551608!2d106.82071371477017!3d-6.200006795499252!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f52a71d9d9d5%3A0x7d242c2d9e0d1d1!2sJakarta%2C%20Indonesia!5e0!3m2!1sen!2sid!4v1638320499000!5m2!1sen!2sid" width="100%" height="150" style="border:0; border-radius: 4px;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            &copy; 2025 Lembaga Mitra Edukasi. Hak Cipta Dilindungi.
+        </div>
+    </footer>
+
+    <script>
+        // Fungsionalitas Hamburger Menu
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('navMenu');
+
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            hamburger.classList.toggle('open');
+        });
+        
+        // Menutup menu saat link di klik (untuk mobile)
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (navMenu.classList.contains('active')) {
+                    navMenu.classList.remove('active');
+                    hamburger.classList.remove('open');
+                }
+            });
+        });
+        
+        // Fungsionalitas FAQ Accordion
+        function toggleFaq(element) {
+            const answer = element.nextElementSibling;
+            const icon = element.querySelector('i');
+            
+            // Tutup semua kecuali yang diklik
+            document.querySelectorAll('.faq-question').forEach(q => {
+                if (q !== element) {
+                    q.nextElementSibling.style.display = 'none';
+                    q.classList.remove('active');
+                }
+            });
+
+            // Toggle yang diklik
+            if (answer.style.display === 'block') {
+                answer.style.display = 'none';
+                element.classList.remove('active');
+            } else {
+                answer.style.display = 'block';
+                element.classList.add('active');
+            }
+        }
+
+        // Fungsionalitas Simulasi Form Permohonan
+        function handleFormSubmission(event) {
+            event.preventDefault(); // Mencegah form dikirim ke server (simulasi)
+
+            const form = document.getElementById('requestForm');
+            const successMessage = document.getElementById('successMessage');
+            
+            if (form.checkValidity()) {
+                // Sembunyikan form dan tampilkan pesan sukses
+                form.style.display = 'none';
+                successMessage.style.display = 'block';
+                
+                // Pindah ke bagian atas form untuk melihat notifikasi
+                document.getElementById('form-permohonan').scrollIntoView({ behavior: 'smooth', block: 'start' });
+                
+                // Untuk proyek nyata, Anda akan mengirim data ke backend di sini
+                // console.log('Data form siap dikirim...'); 
+                
+            } else {
+                alert("Mohon lengkapi semua bidang yang wajib diisi (bertanda *).");
+            }
+        }
+		const GOOGLE_SCRIPT_URL = https://script.google.com/macros/s/AKfycbwugL9rQVjmLPRUwA5HcGvWlqQxOu78FHmUMntpJqCUGF-r50nKMd8hCJC9ntwTkrnV/exec; 
+
+		function handleFormSubmission(event) {
+			event.preventDefault(); // Mencegah form melakukan reload halaman
+
+			const form = document.getElementById('requestForm');
+			const successMessage = document.getElementById('successMessage');
+			const submitButton = form.querySelector('button[type="submit"]');
+
+			if (!form.checkValidity()) {
+				alert("Mohon lengkapi semua bidang yang wajib diisi (bertanda *).");
+				return;
+			}
+
+			submitButton.disabled = true;
+			submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Mengirim...';
+			
+			const data = new FormData(form);
+			
+			// Konversi FormData menjadi objek URLSearchParams
+			const params = new URLSearchParams();
+			for (const [name, value] of data) {
+				params.append(name, value);
+			}
+			
+			// Kirim data secara asinkron (AJAX) ke Apps Script
+			fetch(GOOGLE_SCRIPT_URL, {
+				method: 'POST',
+				// mode: 'no-cors' diperlukan untuk skrip eksternal seperti Apps Script
+				mode: 'no-cors', 
+				body: params
+			})
+			.then(() => {
+				// --- PROSES SUKSES ---
+				form.reset(); 
+				
+				// Sembunyikan form dan tampilkan pesan sukses
+				form.style.display = 'none';
+				successMessage.style.display = 'block';
+				
+				// Pindah ke bagian atas form agar user melihat notifikasi
+				document.getElementById('form-permohonan').scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+				// Timer untuk mengembalikan tampilan
+				setTimeout(() => {
+					successMessage.style.display = 'none';
+					form.style.display = 'block';
+					submitButton.disabled = false;
+					submitButton.innerHTML = '<i class="fas fa-paper-plane"></i> Kirim Permintaan';
+				}, 8000); 
+
+			})
+			.catch((error) => {
+				// --- PROSES GAGAL ---
+				console.error('Error saat mengirim formulir:', error);
+				alert('Terjadi kesalahan saat mengirim data. Silakan coba lagi atau hubungi via WhatsApp.');
+				
+				submitButton.disabled = false;
+				submitButton.innerHTML = '<i class="fas fa-paper-plane"></i> Kirim Permintaan';
+			});
+		}
+    </script>
+</body>
+</html>
