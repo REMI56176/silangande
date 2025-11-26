@@ -764,8 +764,10 @@
         <section id="form-permohonan">
             <div class="container">
                 <h2 style="text-align: center; margin-bottom: 2rem;"><i class="fas fa-file-alt"></i> Ajukan Permintaan Layanan</h2>
-                    <label for="layanan">Jenis Layanan yang Dibutuhkan*</label>
-					<select id="layanan" name="layanan" required>
+				<form id="requestForm" action="https://formspree.io/f/xzzqvong" method="POST">
+				    <input type="hidden" name="_replyto" value="Kontak Email"> 
+				    <label for="layanan">Jenis Layanan yang Dibutuhkan*</label>
+				    <select id="layanan" name="Jenis Layanan" required>
 						<option value="">Pilih Jenis Formulir</option>
 						<option value="narasumber">Permohonan Narasumber</option>
 						<option value="peminjaman">Permohonan Peminjaman Alat</option>
@@ -775,30 +777,14 @@
 						<option value="kuliah-umum">Permohonan Kuliah Umum</option>
 						<option value="osis-bem">Permohonan Pendampingan OSIS/BEM</option>
 						<option value="lainnya">Layanan Lainnya (Custom Request)</option>
-					</select>
-					<form id="requestForm" action="https://formspree.io/f/xzzqvong" method="POST">
-    					</form>
-					<label for="instansi">Nama Sekolah/Kampus/Instansi*</label>
-					<input type="text" id="instansi" name="instansi" required placeholder="Contoh: SMA Negeri 1 Jakarta">
-
-					<label for="pj">Penanggung Jawab (Nama Lengkap)*</label>
-					<input type="text" id="pj" name="pj" required placeholder="Contoh: Bapak/Ibu Ahmad">
-
-					<label for="kontak">Nomor HP/WhatsApp Penanggung Jawab*</label>
-					<input type="tel" id="kontak" name="kontak" required placeholder="Contoh: 0812XXXXXXXX">
-
-					<label for="jadwal">Estimasi Tanggal Pelaksanaan*</label>
-					<input type="date" id="jadwal" name="jadwal" required>
-					
-					<label for="kebutuhan">Jelaskan Kebutuhan Anda (Topik, Jumlah Peserta, dll.)*</label>
-					<textarea id="kebutuhan" name="kebutuhan" rows="5" required placeholder="Jelaskan detail kebutuhan dan catatan khusus Anda."></textarea>
-					
-					<button type="submit" class="btn btn-secondary" style="width: 100%; margin-top: 1rem; padding: 1rem; font-size: 1.1rem;"><i class="fas fa-paper-plane"></i> Kirim Permintaan</button>
-					<p style="text-align: center; margin-top: 1rem; font-size: 0.85rem; color: #666;">*Tim kami akan menghubungi Anda dalam 1x24 jam (hari kerja).</p>
-					
-					<div id="successMessage" style="display: none; margin-top: 1.5rem; padding: 1rem; background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; border-radius: 4px; text-align: center;">
-						<i class="fas fa-check-circle"></i> Permintaan Anda sudah kami terima. Tim kami akan menghubungi dalam 1x24 jam.
-					</div>
+				        </select>
+				    <label for="instansi">Nama Sekolah/Kampus/Instansi*</label>
+				    <input type="text" id="instansi" name="Nama Instansi" required placeholder="Contoh: SMA Negeri 1 Jakarta">
+				    <label for="pj">Penanggung Jawab (Nama Lengkap)*</label>
+				    <input type="text" id="pj" name="Penanggung Jawab" required placeholder="Contoh: Bapak/Ibu Ahmad">
+				    <label for="kontak">Nomor HP/WhatsApp Penanggung Jawab*</label>
+				    <input type="tel" id="kontak" name="Nomor WA/HP" required placeholder="Contoh: 0812XXXXXXXX">
+				    <button type="submit" class="btn btn-secondary" style="width: 100%; margin-top: 1rem; padding: 1rem; font-size: 1.1rem;"><i class="fas fa-paper-plane"></i> Kirim Permintaan</button>
                 </form>
             </div>
         </section>
@@ -966,6 +952,7 @@
     </script>
 </body>
 </html>
+
 
 
 
