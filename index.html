@@ -764,8 +764,6 @@
         <section id="form-permohonan">
             <div class="container">
                 <h2 style="text-align: center; margin-bottom: 2rem;"><i class="fas fa-file-alt"></i> Ajukan Permintaan Layanan</h2>
-                <form id="requestForm" action="https://formspree.io/f/xzzqvong" method="POST">
-    				</form>
                     <label for="layanan">Jenis Layanan yang Dibutuhkan*</label>
 					<select id="layanan" name="layanan" required>
 						<option value="">Pilih Jenis Formulir</option>
@@ -778,7 +776,8 @@
 						<option value="osis-bem">Permohonan Pendampingan OSIS/BEM</option>
 						<option value="lainnya">Layanan Lainnya (Custom Request)</option>
 					</select>
-					
+					<form id="requestForm" action="https://formspree.io/f/xzzqvong" method="POST">
+    					</form>
 					<label for="instansi">Nama Sekolah/Kampus/Instansi*</label>
 					<input type="text" id="instansi" name="instansi" required placeholder="Contoh: SMA Negeri 1 Jakarta">
 
@@ -967,6 +966,7 @@
     </script>
 </body>
 </html>
+
 
 
 
